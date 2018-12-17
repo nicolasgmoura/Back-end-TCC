@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EMarketingModelStoreContainer" CdmEntityContainer="DataModel">
+    <EntitySetMapping Name="Acompanhamento">
+      <EntityTypeMapping TypeName="EMarketingModel.Acompanhamento">
+        <MappingFragment StoreEntitySet="Acompanhamento">
+          <ScalarProperty Name="IdConsumidor" ColumnName="IdConsumidor" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="IdAcompanhamento" ColumnName="IdAcompanhamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Avaliacao">
+      <EntityTypeMapping TypeName="EMarketingModel.Avaliacao">
+        <MappingFragment StoreEntitySet="Avaliacao">
+          <ScalarProperty Name="DataAvaliacao" ColumnName="DataAvaliacao" />
+          <ScalarProperty Name="ValorAvaliacao" ColumnName="ValorAvaliacao" />
+          <ScalarProperty Name="IdConsumidor" ColumnName="IdConsumidor" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+          <ScalarProperty Name="IdAvaliacao" ColumnName="IdAvaliacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cidade">
+      <EntityTypeMapping TypeName="EMarketingModel.Cidade">
+        <MappingFragment StoreEntitySet="Cidade">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="CodigoIBGE" ColumnName="CodigoIBGE" />
+          <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comentario">
+      <EntityTypeMapping TypeName="EMarketingModel.Comentario">
+        <MappingFragment StoreEntitySet="Comentario">
+          <ScalarProperty Name="DataComentario" ColumnName="DataComentario" />
+          <ScalarProperty Name="IdResposta" ColumnName="IdResposta" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdPublicacao" ColumnName="IdPublicacao" />
+          <ScalarProperty Name="IdComentario" ColumnName="IdComentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consumidor">
+      <EntityTypeMapping TypeName="EMarketingModel.Consumidor">
+        <MappingFragment StoreEntitySet="Consumidor">
+          <ScalarProperty Name="QuantidadeSeguimentos" ColumnName="QuantidadeSeguimentos" />
+          <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="IdConsumidor" ColumnName="IdConsumidor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Denuncia">
+      <EntityTypeMapping TypeName="EMarketingModel.Denuncia">
+        <MappingFragment StoreEntitySet="Denuncia">
+          <ScalarProperty Name="DataDenuncia" ColumnName="DataDenuncia" />
+          <ScalarProperty Name="Mensagem" ColumnName="Mensagem" />
+          <ScalarProperty Name="IdComentario" ColumnName="IdComentario" />
+          <ScalarProperty Name="IdPublicacao" ColumnName="IdPublicacao" />
+          <ScalarProperty Name="IdConsumidor" ColumnName="IdConsumidor" />
+          <ScalarProperty Name="IdDenuncia" ColumnName="IdDenuncia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresa">
+      <EntityTypeMapping TypeName="EMarketingModel.Empresa">
+        <MappingFragment StoreEntitySet="Empresa">
+          <ScalarProperty Name="QuantidadeAvaliacao" ColumnName="QuantidadeAvaliacao" />
+          <ScalarProperty Name="MediaAvaliacao" ColumnName="MediaAvaliacao" />
+          <ScalarProperty Name="QuantidadeSeguidores" ColumnName="QuantidadeSeguidores" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="CEP" ColumnName="CEP" />
+          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="Fantasia" ColumnName="Fantasia" />
+          <ScalarProperty Name="RazaoSocial" ColumnName="RazaoSocial" />
+          <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+          <ScalarProperty Name="IdSegmento" ColumnName="IdSegmento" />
+          <ScalarProperty Name="IdEmpresa" ColumnName="IdEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado">
+      <EntityTypeMapping TypeName="EMarketingModel.Estado">
+        <MappingFragment StoreEntitySet="Estado">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Sigla" ColumnName="Sigla" />
+          <ScalarProperty Name="CodigoIBGE" ColumnName="CodigoIBGE" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publicacao">
+      <EntityTypeMapping TypeName="EMarketingModel.Publicacao">
+        <MappingFragment StoreEntitySet="Publicacao">
+          <ScalarProperty Name="QuantidadeVisualizacoes" ColumnName="QuantidadeVisualizacoes" />
+          <ScalarProperty Name="QuantidadeDenuncias" ColumnName="QuantidadeDenuncias" />
+          <ScalarProperty Name="QuantidadeComentarios" ColumnName="QuantidadeComentarios" />
+          <ScalarProperty Name="AreaPublicacao" ColumnName="AreaPublicacao" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="DataPublicacao" ColumnName="DataPublicacao" />
+          <ScalarProperty Name="ImagemPublicacao" ColumnName="ImagemPublicacao" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdPublicacao" ColumnName="IdPublicacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Segmento">
+      <EntityTypeMapping TypeName="EMarketingModel.Segmento">
+        <MappingFragment StoreEntitySet="Segmento">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="IdSegmento" ColumnName="IdSegmento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="EMarketingModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+          <ScalarProperty Name="IdCidade" ColumnName="IdCidade" />
+          <ScalarProperty Name="IsEmpresa" ColumnName="IsEmpresa" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="NomeUsuario" ColumnName="NomeUsuario" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

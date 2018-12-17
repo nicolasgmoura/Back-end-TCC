@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4ca3ca754dda4ab7be0e6e0d4d7d7231" Name="Diagram1" ZoomLevel="89">
+        <EntityTypeShape EntityType="EMarketingModel.Acompanhamento" Width="1.5" PointX="9.25" PointY="0.5" />
+        <EntityTypeShape EntityType="EMarketingModel.Avaliacao" Width="1.5" PointX="2.875" PointY="0.75" />
+        <EntityTypeShape EntityType="EMarketingModel.Cidade" Width="1.5" PointX="5.125" PointY="4" />
+        <EntityTypeShape EntityType="EMarketingModel.Comentario" Width="1.5" PointX="9.75" PointY="3.375" />
+        <EntityTypeShape EntityType="EMarketingModel.Consumidor" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="EMarketingModel.Denuncia" Width="1.5" PointX="12.5" PointY="4.25" />
+        <EntityTypeShape EntityType="EMarketingModel.Empresa" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="EMarketingModel.Estado" Width="1.5" PointX="2.625" PointY="4.125" />
+        <EntityTypeShape EntityType="EMarketingModel.Publicacao" Width="1.5" PointX="12.375" PointY="0.5" />
+        <EntityTypeShape EntityType="EMarketingModel.Segmento" Width="1.5" PointX="0.5" PointY="5.5" />
+        <EntityTypeShape EntityType="EMarketingModel.Usuario" Width="1.5" PointX="7.5" PointY="3" />
+        <AssociationConnector Association="EMarketingModel.FK_Acompanhamento_Consumidor" />
+        <AssociationConnector Association="EMarketingModel.FK_Acompanhamento_Empresa" />
+        <AssociationConnector Association="EMarketingModel.FK_Avaliacao_Consumidor" />
+        <AssociationConnector Association="EMarketingModel.FK_Avaliacao_Empresa" />
+        <AssociationConnector Association="EMarketingModel.FK_Cidade_Estado" />
+        <AssociationConnector Association="EMarketingModel.FK_Usuario_Cidade" />
+        <AssociationConnector Association="EMarketingModel.FK_Comentario_Publicacao" />
+        <AssociationConnector Association="EMarketingModel.FK_Comentario_Resposta" />
+        <AssociationConnector Association="EMarketingModel.FK_Comentario_Usuario" />
+        <AssociationConnector Association="EMarketingModel.FK_Denuncia_Comentario" />
+        <AssociationConnector Association="EMarketingModel.FK_Consumidor_Usuario" />
+        <AssociationConnector Association="EMarketingModel.FK_Denuncia_Publicacao" />
+        <AssociationConnector Association="EMarketingModel.FK_Denuncia_Usuario" />
+        <AssociationConnector Association="EMarketingModel.FK_Empresa_Segmento" />
+        <AssociationConnector Association="EMarketingModel.FK_Empresa_Usuario" />
+        <AssociationConnector Association="EMarketingModel.FK_Publicacao_Usuario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

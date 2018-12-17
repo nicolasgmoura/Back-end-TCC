@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMarketingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Acompanhamento">
+    <Key>
+      <PropertyRef Name="IdAcompanhamento" />
+    </Key>
+    <Property Name="IdAcompanhamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpresa" Type="int" Nullable="false" />
+    <Property Name="IdConsumidor" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Avaliacao">
+    <Key>
+      <PropertyRef Name="IdAvaliacao" />
+    </Key>
+    <Property Name="IdAvaliacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpresa" Type="int" Nullable="false" />
+    <Property Name="IdConsumidor" Type="int" Nullable="false" />
+    <Property Name="ValorAvaliacao" Type="int" Nullable="false" />
+    <Property Name="DataAvaliacao" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cidade">
+    <Key>
+      <PropertyRef Name="IdCidade" />
+    </Key>
+    <Property Name="IdCidade" Type="int" Nullable="false" />
+    <Property Name="CodigoIBGE" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="IdEstado" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comentario">
+    <Key>
+      <PropertyRef Name="IdComentario" />
+    </Key>
+    <Property Name="IdComentario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPublicacao" Type="int" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IdResposta" Type="int" />
+    <Property Name="DataComentario" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Consumidor">
+    <Key>
+      <PropertyRef Name="IdConsumidor" />
+    </Key>
+    <Property Name="IdConsumidor" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DataNascimento" Type="date" Nullable="false" />
+    <Property Name="QuantidadeSeguimentos" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Denuncia">
+    <Key>
+      <PropertyRef Name="IdDenuncia" />
+    </Key>
+    <Property Name="IdDenuncia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdConsumidor" Type="int" Nullable="false" />
+    <Property Name="IdPublicacao" Type="int" />
+    <Property Name="IdComentario" Type="int" />
+    <Property Name="Mensagem" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DataDenuncia" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="IdEmpresa" />
+    </Key>
+    <Property Name="IdEmpresa" Type="int" Nullable="false" />
+    <Property Name="IdSegmento" Type="int" Nullable="false" />
+    <Property Name="CNPJ" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="RazaoSocial" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Fantasia" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Endereco" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Numero" Type="int" Nullable="false" />
+    <Property Name="Bairro" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="CEP" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Telefone" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="Logo" Type="varchar(max)" />
+    <Property Name="QuantidadeSeguidores" Type="int" Nullable="false" />
+    <Property Name="MediaAvaliacao" Type="real" Nullable="false" />
+    <Property Name="QuantidadeAvaliacao" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="int" Nullable="false" />
+    <Property Name="CodigoIBGE" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Sigla" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Publicacao">
+    <Key>
+      <PropertyRef Name="IdPublicacao" />
+    </Key>
+    <Property Name="IdPublicacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="ImagemPublicacao" Type="varchar(max)" />
+    <Property Name="DataPublicacao" Type="date" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" MaxLength="100" />
+    <Property Name="AreaPublicacao" Type="varchar" MaxLength="200" />
+    <Property Name="QuantidadeComentarios" Type="int" Nullable="false" />
+    <Property Name="QuantidadeDenuncias" Type="int" Nullable="false" />
+    <Property Name="QuantidadeVisualizacoes" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Segmento">
+    <Key>
+      <PropertyRef Name="IdSegmento" />
+    </Key>
+    <Property Name="IdSegmento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomeUsuario" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Senha" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="IsEmpresa" Type="bit" Nullable="false" />
+    <Property Name="IdCidade" Type="int" />
+    <Property Name="isAdmin" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Acompanhamento_Consumidor">
+    <End Role="Consumidor" Type="Self.Consumidor" Multiplicity="1" />
+    <End Role="Acompanhamento" Type="Self.Acompanhamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consumidor">
+        <PropertyRef Name="IdConsumidor" />
+      </Principal>
+      <Dependent Role="Acompanhamento">
+        <PropertyRef Name="IdConsumidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Acompanhamento_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="Acompanhamento" Type="Self.Acompanhamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Principal>
+      <Dependent Role="Acompanhamento">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Avaliacao_Consumidor">
+    <End Role="Consumidor" Type="Self.Consumidor" Multiplicity="1" />
+    <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consumidor">
+        <PropertyRef Name="IdConsumidor" />
+      </Principal>
+      <Dependent Role="Avaliacao">
+        <PropertyRef Name="IdConsumidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Avaliacao_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="1" />
+    <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Principal>
+      <Dependent Role="Avaliacao">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cidade_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IdEstado" />
+      </Principal>
+      <Dependent Role="Cidade">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comentario_Publicacao">
+    <End Role="Publicacao" Type="Self.Publicacao" Multiplicity="1" />
+    <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publicacao">
+        <PropertyRef Name="IdPublicacao" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="IdPublicacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comentario_Resposta">
+    <End Role="Comentario" Type="Self.Comentario" Multiplicity="0..1" />
+    <End Role="Comentario1" Type="Self.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comentario">
+        <PropertyRef Name="IdComentario" />
+      </Principal>
+      <Dependent Role="Comentario1">
+        <PropertyRef Name="IdResposta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comentario_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Comentario" Type="Self.Comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consumidor_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Consumidor" Type="Self.Consumidor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Consumidor">
+        <PropertyRef Name="IdConsumidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Denuncia_Comentario">
+    <End Role="Comentario" Type="Self.Comentario" Multiplicity="0..1" />
+    <End Role="Denuncia" Type="Self.Denuncia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comentario">
+        <PropertyRef Name="IdComentario" />
+      </Principal>
+      <Dependent Role="Denuncia">
+        <PropertyRef Name="IdComentario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Denuncia_Publicacao">
+    <End Role="Publicacao" Type="Self.Publicacao" Multiplicity="0..1" />
+    <End Role="Denuncia" Type="Self.Denuncia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publicacao">
+        <PropertyRef Name="IdPublicacao" />
+      </Principal>
+      <Dependent Role="Denuncia">
+        <PropertyRef Name="IdPublicacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Denuncia_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Denuncia" Type="Self.Denuncia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Denuncia">
+        <PropertyRef Name="IdConsumidor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empresa_Segmento">
+    <End Role="Segmento" Type="Self.Segmento" Multiplicity="1" />
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Segmento">
+        <PropertyRef Name="IdSegmento" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="IdSegmento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empresa_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="IdEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Publicacao_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Publicacao" Type="Self.Publicacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Publicacao">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Cidade">
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="0..1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="IdCidade" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IdCidade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EMarketingModelStoreContainer">
+    <EntitySet Name="Acompanhamento" EntityType="Self.Acompanhamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Avaliacao" EntityType="Self.Avaliacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cidade" EntityType="Self.Cidade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comentario" EntityType="Self.Comentario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consumidor" EntityType="Self.Consumidor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Denuncia" EntityType="Self.Denuncia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publicacao" EntityType="Self.Publicacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Segmento" EntityType="Self.Segmento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Acompanhamento_Consumidor" Association="Self.FK_Acompanhamento_Consumidor">
+      <End Role="Consumidor" EntitySet="Consumidor" />
+      <End Role="Acompanhamento" EntitySet="Acompanhamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Acompanhamento_Empresa" Association="Self.FK_Acompanhamento_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Acompanhamento" EntitySet="Acompanhamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Avaliacao_Consumidor" Association="Self.FK_Avaliacao_Consumidor">
+      <End Role="Consumidor" EntitySet="Consumidor" />
+      <End Role="Avaliacao" EntitySet="Avaliacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Avaliacao_Empresa" Association="Self.FK_Avaliacao_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Avaliacao" EntitySet="Avaliacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cidade_Estado" Association="Self.FK_Cidade_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Cidade" EntitySet="Cidade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comentario_Publicacao" Association="Self.FK_Comentario_Publicacao">
+      <End Role="Publicacao" EntitySet="Publicacao" />
+      <End Role="Comentario" EntitySet="Comentario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comentario_Resposta" Association="Self.FK_Comentario_Resposta">
+      <End Role="Comentario" EntitySet="Comentario" />
+      <End Role="Comentario1" EntitySet="Comentario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comentario_Usuario" Association="Self.FK_Comentario_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Comentario" EntitySet="Comentario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consumidor_Usuario" Association="Self.FK_Consumidor_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Consumidor" EntitySet="Consumidor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Denuncia_Comentario" Association="Self.FK_Denuncia_Comentario">
+      <End Role="Comentario" EntitySet="Comentario" />
+      <End Role="Denuncia" EntitySet="Denuncia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Denuncia_Publicacao" Association="Self.FK_Denuncia_Publicacao">
+      <End Role="Publicacao" EntitySet="Publicacao" />
+      <End Role="Denuncia" EntitySet="Denuncia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Denuncia_Usuario" Association="Self.FK_Denuncia_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Denuncia" EntitySet="Denuncia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empresa_Segmento" Association="Self.FK_Empresa_Segmento">
+      <End Role="Segmento" EntitySet="Segmento" />
+      <End Role="Empresa" EntitySet="Empresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empresa_Usuario" Association="Self.FK_Empresa_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Empresa" EntitySet="Empresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Publicacao_Usuario" Association="Self.FK_Publicacao_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Publicacao" EntitySet="Publicacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Cidade" Association="Self.FK_Usuario_Cidade">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
